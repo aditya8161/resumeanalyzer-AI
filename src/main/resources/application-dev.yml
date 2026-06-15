@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+#Datasource and JPA configuration
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: ${DB_DRIVER}
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+#logging configuration
+logging:
+  level:
+    com.resumeanalyzer: DEBUG
+    org.hibernate.SQL: DEBUG

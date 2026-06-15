@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: resume-analyzer
+
+#profiles
+  profiles:
+    active: dev
+
