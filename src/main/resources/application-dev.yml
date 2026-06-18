@@ -1,8 +1,14 @@
 server:
   port: 8080
 
-#Datasource and JPA configuration
 spring:
+  application:
+    jwt:
+      secret: ${JWT_SECRET}
+      access-token-expiry: 900000       # 15 minutes in ms
+      refresh-token-expiry: 604800000   # 7 days in ms
+
+#Datasource and JPA configuration
   datasource:
     url: ${DB_URL}
     username: ${DB_USERNAME}
@@ -10,7 +16,7 @@ spring:
     driver-class-name: ${DB_DRIVER}
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
 
 #logging configuration
